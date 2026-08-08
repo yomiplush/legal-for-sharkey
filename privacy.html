@@ -9,62 +9,114 @@
   * { box-sizing: border-box; }
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", sans-serif; line-height: 1.8; margin: 0; padding: 0; background: #f7f7f9; color: #222; }
   @media (prefers-color-scheme: dark) { body { background: #16161a; color: #e8e8ea; } }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 40px 24px 80px; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 40px 24px 80px; }
   h1 { font-size: 1.5rem; border-bottom: 2px solid #66b3ff; padding-bottom: 8px; }
   h2 { font-size: 1.1rem; margin-top: 2em; }
+  h3 { font-size: 1rem; margin-top: 1.6em; }
   .meta { color: #888; font-size: .85rem; margin-bottom: 2em; }
-  ul { padding-left: 1.4em; }
+  ul, ol { padding-left: 1.4em; }
   li { margin: .4em 0; }
-  table { width: 100%; border-collapse: collapse; font-size: .92rem; }
-  th, td { border: 1px solid #999; padding: 8px 10px; text-align: left; }
+  table { width: 100%; border-collapse: collapse; font-size: .9rem; margin: 1em 0; }
+  th, td { border: 1px solid #999; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: rgba(102,179,255,.15); }
+  code { background: rgba(128,128,128,.15); padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .note { background: rgba(102,179,255,.12); border-left: 3px solid #66b3ff; padding: 12px 16px; font-size: .9rem; margin-top: 2em; }
   .updated { text-align: right; color: #999; font-size: .85rem; margin-top: 3em; }
+  address { font-style: normal; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1>Privacy Policy</h1>
-  <p class="meta">sharkey.inari-lost-shrine.net (hereinafter "this Instance") is operated personally by the administrator YomiPlush. This policy sets out how personal information is handled on this Instance, in accordance with Japanese law (including the Act on the Protection of Personal Information).</p>
+  <p class="meta">sharkey.inari-lost-shrine.net (hereinafter "this Instance") &mdash; Last updated: August 9, 2026</p>
 
-  <h2>1. Information Collected</h2>
-  <p>This Instance automatically collects and stores the following information to provide the service:</p>
+  <p>This Privacy Policy explains how personal data is processed when you use the microblogging service <strong>sharkey.inari-lost-shrine.net</strong> (hereinafter &ldquo;this Instance&rdquo;). This Instance is a non-commercial, single-user instance operated privately by an individual. It is based on the open-source software <a href="https://activitypub.software/TransFem-org/Sharkey/" rel="noopener">Sharkey</a> (a fork of Misskey).</p>
+  <p>If you are located in the European Economic Area (EEA), the United Kingdom, or Switzerland, this policy describes your rights under the <strong>General Data Protection Regulation (GDPR)</strong>. We process personal data only to the minimum extent necessary to operate a federated social network.</p>
+
+  <h2>1. Controller (Responsible Party)</h2>
+  <address>
+    Operator: YomiPlush<br>
+    Service: sharkey.inari-lost-shrine.net<br>
+    Contact: <a href="mailto:yueplushdev@gmail.com">yueplushdev@gmail.com</a><br>
+    Federated account: <a href="https://sharkey.inari-lost-shrine.net/@YomiPlush" rel="me">@YomiPlush@sharkey.inari-lost-shrine.net</a>
+  </address>
+  <p>For all questions relating to data protection, or to exercise your rights, please contact the address above. We aim to respond within 30 days.</p>
+
+  <h2>2. Categories of Personal Data Processed</h2>
+  <p>Registration on this Instance is currently <strong>disabled</strong>; accounts are created only by the administrator. Even so, the following data may be processed:</p>
   <table>
-    <tr><th>Information</th><th>Purpose</th></tr>
-    <tr><td>Account information (username, email address, password hash, etc.)</td><td>Account management</td></tr>
-    <tr><td>Content of posts and uploaded files</td><td>Provision of the service</td></tr>
-    <tr><td>Access logs (IP address, User-Agent, access time, etc.)</td><td>Security and prevention of misuse</td></tr>
-    <tr><td>Cookies and session information</td><td>Maintaining login state</td></tr>
+    <tr><th>Category</th><th>Description</th></tr>
+    <tr><td>Account data</td><td>Username, display name, password (stored only as an unreadable hash), email address (if provided), biography, avatar and banner images.</td></tr>
+    <tr><td>Content data</td><td>Posts (&ldquo;notes&rdquo;), reactions, replies, mentions, polls, and any files you upload (images, videos, audio).</td></tr>
+    <tr><td>Interaction data</td><td>Follows, blocks, mutes, lists, and other social graph data needed for the service to function.</td></tr>
+    <tr><td>Technical data</td><td>Access tokens (stored only on your device), web-session identifiers, and the information technically required to deliver the service.</td></tr>
+    <tr><td>IP addresses</td><td><strong>Not stored by this Instance.</strong> IP-logging is disabled on the server. IP addresses may nevertheless pass through network infrastructure (see section 6) and may appear in transient network logs.</td></tr>
   </table>
 
-  <h2>2. Purposes of Use</h2>
+  <h2>3. Purposes and Legal Bases of Processing</h2>
+  <p>We process personal data only for the purposes described below. Under the GDPR, each purpose relies on one or more legal bases:</p>
+  <table>
+    <tr><th>Purpose</th><th>Legal basis (Art. 6 GDPR)</th></tr>
+    <tr><td>Providing the service: storing and displaying posts, files, profiles, and enabling the social graph.</td><td>Performance of a contract (Art. 6(1)(b)) and, where no contract exists, legitimate interest in operating the service (Art. 6(1)(f)).</td></tr>
+    <tr><td>Federating content with other servers via the ActivityPub protocol.</td><td>Legitimate interest (Art. 6(1)(f)); federation is the core functionality of the service. Where you explicitly enable federation features, consent (Art. 6(1)(a)) may also apply.</td></tr>
+    <tr><td>Security, abuse prevention, and responding to data-subject requests.</td><td>Legitimate interest (Art. 6(1)(f)) in protecting the service and its users.</td></tr>
+    <tr><td>Backups to prevent data loss.</td><td>Legitimate interest (Art. 6(1)(f)).</td></tr>
+  </table>
+
+  <h2>4. Recipients and Processors</h2>
+  <p>Your data is shared only as necessary for the operation of the service:</p>
   <ul>
-    <li>To provide and operate this service</li>
-    <li>To communicate with other instances via federation (ActivityPub)</li>
-    <li>To prevent unauthorized access, spam, and other misuse</li>
-    <li>To improve the service</li>
+    <li><strong>Federated instances:</strong> By design of the federated social web, content you make public may be transmitted to and stored on other instances worldwide that you follow or that follow this Instance. Those instances are <em>independent controllers</em> with their own privacy policies. Content is also stored on the servers of instances of accounts you mention.</li>
+    <li><strong>Cloudflare, Inc.:</strong> This Instance is published through Cloudflare&rsquo;s CDN, proxy, DNS, and Tunnel services. Cloudflare acts as a <em>processor</em> for the technical delivery of the site. Its data handling is governed by its <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">Privacy Policy</a> and its GDPR data-processing terms.</li>
+    <li><strong>Hosting and network providers:</strong> The server is self-hosted hardware connected to the internet through an Internet Service Provider, which processes data only for the technical transport of traffic.</li>
+    <li><strong>Domain registrar:</strong> The domain name is registered through a registrar, which processes registration data (e.g., registrant name) in accordance with its own policies.</li>
   </ul>
+  <p>We do <strong>not</strong> sell personal data, and we do not share data with advertisers or data brokers.</p>
 
-  <h2>3. Disclosure to Third Parties</h2>
-  <p>Collected information will not be disclosed to third parties except in the following cases:</p>
+  <h2>5. International Data Transfers</h2>
+  <p>Federation and Cloudflare&rsquo;s global network may involve transferring data to countries outside the EEA (including the United States and Japan). Cloudflare relies on adequacy decisions and/or the European Commission&rsquo;s Standard Contractual Clauses for such transfers. Data sent to federated instances may be stored in countries whose data-protection laws differ from those in your country; by using a federated service you acknowledge this inherent property of the ActivityPub protocol.</p>
+
+  <h2>6. Cookies, Local Storage, and Tracking</h2>
+  <p>This Instance itself sets <strong>no tracking cookies</strong> and uses <strong>no advertising, analytics, or tracking pixels</strong>. Session state is kept in your browser&rsquo;s local storage. Because the site is served through Cloudflare, Cloudflare may set its own cookies (such as <code>__cf_bm</code> or <code>cf_clearance</code>) for security and bot-mitigation purposes. See Cloudflare&rsquo;s <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">Privacy Policy</a> for details.</p>
+
+  <h2>7. Data Retention</h2>
+  <table>
+    <tr><th>Data</th><th>Retention period</th></tr>
+    <tr><td>Account and profile data</td><td>Until the account is deleted or this Instance is shut down.</td></tr>
+    <tr><td>Posts and uploaded files</td><td>Until deleted by you, by the administrator, or until this Instance is shut down.</td></tr>
+    <tr><td>Backups</td><td>Backups are kept for a rolling period of approximately 7 days, after which older copies are deleted automatically.</td></tr>
+    <tr><td>Network/CDN logs</td><td>Per the retention policies of the respective processors (e.g., Cloudflare).</td></tr>
+  </table>
+  <p>Deletion from backups may take place no later than when those backups expire.</p>
+
+  <h2>8. Your Rights under the GDPR</h2>
+  <p>If you are located in the EEA, the UK, or Switzerland, you have the following rights, which you may exercise by contacting us (section 1):</p>
   <ul>
-    <li>When posts and other content are delivered to federated instances via the federation protocol</li>
-    <li>When required by law</li>
-    <li>When the individual has given consent</li>
+    <li><strong>Right of access</strong> (Art. 15) &ndash; obtain a copy of the personal data we hold about you.</li>
+    <li><strong>Right to rectification</strong> (Art. 16) &ndash; correct inaccurate or incomplete data.</li>
+    <li><strong>Right to erasure</strong> (&ldquo;right to be forgotten&rdquo;, Art. 17) &ndash; request deletion of your data.</li>
+    <li><strong>Right to restriction of processing</strong> (Art. 18).</li>
+    <li><strong>Right to data portability</strong> (Art. 20) &ndash; receive your data in a structured, machine-readable format.</li>
+    <li><strong>Right to object</strong> (Art. 21) &ndash; object to processing based on legitimate interest.</li>
+    <li><strong>Right to withdraw consent</strong> (Art. 7(3)) &ndash; where processing is based on consent, you may withdraw it at any time without affecting the lawfulness of prior processing.</li>
+    <li><strong>Right to lodge a complaint</strong> (Art. 77) &ndash; complain to the supervisory authority of your Member State of residence, place of work, or place of the alleged infringement.</li>
   </ul>
-  <p>This Instance is published via Cloudflare services (Cloudflare Tunnel), and part of the traffic passes through Cloudflare. For Cloudflare's data handling, please refer to the <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">Cloudflare Privacy Policy</a>.</p>
+  <p>There is <strong>no automated decision-making</strong>, including profiling, on this Instance.</p>
 
-  <h2>4. Data Retention Period</h2>
-  <p>Collected information is retained only for the period necessary to provide the service. Access logs are stored for a certain period for security purposes and then deleted.</p>
+  <h2>9. Children</h2>
+  <p>This Instance is not directed at children. We do not knowingly collect personal data from anyone under the age of 16. If you believe a child has provided us with personal data, please contact us so that we can delete it.</p>
 
-  <h2>5. Security</h2>
-  <p>Appropriate security measures are taken to prevent unauthorized access, leakage, loss, or damage to collected information.</p>
+  <h2>10. Security</h2>
+  <p>We apply reasonable technical and organisational measures appropriate to a personal, single-user instance, including encrypted (HTTPS) transport, hashed passwords, access controls, and automatic encrypted backups of the database and files.</p>
 
-  <h2>6. Analytics and External Services</h2>
-  <p>This Instance does not use external analytics services that track user behavior.</p>
+  <h2>11. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. The current version is always available at this URL, and the &ldquo;Last updated&rdquo; date at the top will be revised accordingly. Material changes will be announced on the instance.</p>
 
-  <h2>7. Contact</h2>
-  <p>For privacy-related questions, please contact the Administrator via the federated account (@YomiPlush@sharkey.inari-lost-shrine.net).</p>
+  <div class="note">
+    <strong>Controller contact for data-protection requests:</strong> <a href="mailto:yueplushdev@gmail.com">yueplushdev@gmail.com</a>. Please allow up to 30 days for a response.
+  </div>
 
-  <p class="updated">Effective: August 8, 2026</p>
+  <p class="updated">Effective: August 9, 2026</p>
 </div>
 </body>
 </html>
